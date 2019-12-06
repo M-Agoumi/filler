@@ -6,7 +6,7 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 17:46:31 by magoumi           #+#    #+#             */
-/*   Updated: 2019/11/20 15:26:38 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/06 11:57:09 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+#include "ft_printf.h"
+# define BUFF_SIZE 1024
+# define ABS(x)	((x < 0) ? -(x) : (x))
+# define STDIN	0
+# define STDOUT	1
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef struct		s_list
 {
@@ -22,6 +29,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_lst
+{
+	char			*cut;
+	int				fd;
+	struct s_lst	*next;
+}					t_lst;
+
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
@@ -100,5 +115,10 @@ char				*ft_itoa_signed(intmax_t num);
 char				*ft_itoa_unsigned(uintmax_t num, int base);
 long				ft_countnumber(intmax_t v, int b);
 void				ft_toupper_s(char *s);
+unsigned int		ft_hcf(unsigned int a, unsigned int b);
+int					get_next_line(const int fd, char **line);
+int					ft_min(int a, int b);
+int					ft_max(int a, int b);
+int					ft_printf(const char *restrict format, ...);
 
 #endif

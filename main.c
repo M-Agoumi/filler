@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@1337.MA>                  +#+  +:+       +#+        */
+/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/12 19:52:59 by magoumi           #+#    #+#             */
-/*   Updated: 2018/10/12 20:07:18 by magoumi          ###   ########.fr       */
+/*   Created: 2019/12/05 23:41:41 by magoumi           #+#    #+#             */
+/*   Updated: 2019/12/06 04:26:31 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 
-void	ft_strdel(char **as)
+int main()
 {
-	if (as)
-	{
-		free(*as);
-		*as = 0;
-	}
+	char *str;
+
+	str = ft_strdup("test");
+	// if (!ft_strncmp(str, str, 2))
+	// 	ft_putstr("ok");
+	// else
+	// 	ft_putstr("Opsi");
+	ft_strdel(&str);
+	ft_putchar('\n');
+	return (0);
 }
