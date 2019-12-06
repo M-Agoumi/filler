@@ -6,7 +6,7 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 17:46:31 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/06 11:57:09 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/06 11:58:57 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-#include "ft_printf.h"
+# include "libftprintf.h"
 # define BUFF_SIZE 1024
 # define ABS(x)	((x < 0) ? -(x) : (x))
 # define STDIN	0
