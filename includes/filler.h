@@ -6,13 +6,15 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:36:58 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/04 08:13:07 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/10 08:39:17 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
-# include "../ft_printf/src/libftprintf.h"
+# include "../libft/libft.h"
+# define STDIN	0
+# define STDOUT	1
 
 typedef	struct			s_block
 {
@@ -31,6 +33,12 @@ typedef	struct			s_block
 	char				*line;
 }						t_block;
 
-void			        create_priority(t_block *block, int max_y, int max_x);
+void					create_priority(t_block *block, int max_y, int max_x);
+void					skip_line_plateau(char **line);
+void					read_map(t_block *block, int max_y, int max_x);
+void					read_token_size(t_block *block);
+void					create_priority(t_block *block, int max_y, int max_x);
+void					update_priority(t_block *block);
+void					player_step(t_block *block);
 
 #endif
