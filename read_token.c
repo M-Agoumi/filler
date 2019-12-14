@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_token.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:36:41 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/14 04:21:56 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/14 05:31:16 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void create_token(char ***token, int ty)
 	j = 0;
 	if (!(*token = (char **)malloc(sizeof(char *) * (ty + 1))))
 		perror("allocation error");
+	line = NULL;
 	while (j < ty)
 	{
 		get_next_line(STDIN, &line);
@@ -27,7 +28,6 @@ static void create_token(char ***token, int ty)
 		j++;
 		ft_strdel(&line);
 	}
-	(*token)[j] = NULL;
 }
 
 void        read_token_size(t_block *block)

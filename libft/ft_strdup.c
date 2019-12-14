@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <agoumihunter@gmail.com>           +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 18:14:12 by magoumi           #+#    #+#             */
-/*   Updated: 2018/10/10 17:27:03 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/14 05:37:17 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ char	*ft_strdup(const char *s1)
 {
 	char	*s;
 	int		i;
+	int	extra;
 
+	extra = 1;
 	i = -1;
-	s = (char*)malloc(ft_strlen((char*)s1) + 1);
+	if (!ft_strlen(s1))
+		return (0);
+	s = (char*)malloc(ft_strlen((char*)s1) + extra);
 	if (s == NULL)
 		return (0);
 	while (s1[++i])

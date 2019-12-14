@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   filler.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:34:56 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/14 04:32:40 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/14 05:41:52 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static	int		init_player(t_block *block)
 
 	if (get_next_line(STDIN, &line) <= 0)
 		return (0);
+	block->ty = 0;
+	block->tx = 0;
 	if (!ft_strncmp("$$$ exec p1 :", line, 13))
 	{
 		block->player = 'O';
@@ -84,6 +86,8 @@ int				main(void)
 		read_token_size(&block);
 		update_priority(&block);
 		player_step(&block);
+		free(block.token);
+		free(block.map);
 	}
 	return (0);
 }
