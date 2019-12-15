@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_intdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/15 02:58:08 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 05:11:31 by ohachim          ###   ########.fr       */
+/*   Created: 2019/12/15 05:10:27 by ohachim           #+#    #+#             */
+/*   Updated: 2019/12/15 05:10:46 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "libft.h"
 
-void    ft_freemem(char ***str)
+void	ft_intdel(int **as)
 {
-	int i;
-
-	i = 0;
-	while(str[0][i])
+	if (*as)
 	{
-		ft_strdel(&str[0][i]);
-		i++;
-	}
-}
-
-void    ft_freememint(int ***str)
-{
-	int i;
-
-	i = 0;
-	while(str[0][i])
-	{
-		ft_intdel(&str[0][i]);
-		i++;
+		free(*as);
+		*as = NULL;
 	}
 }

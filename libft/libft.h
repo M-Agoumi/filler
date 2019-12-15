@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 17:46:31 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/06 13:13:00 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/15 05:11:08 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,6 @@ int					get_next_line(const int fd, char **line);
 int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 int					ft_printf(const char *restrict format, ...);
+void				ft_intdel(int **as);
 
 #endif

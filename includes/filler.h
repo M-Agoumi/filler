@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   filler.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:36:58 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 04:18:27 by ohachim          ###   ########.fr       */
+/*   Updated: 2019/12/15 05:09:04 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void					create_priority(t_block *block, int max_y, int max_x);
 void					update_priority(t_block *block);
 void					player_step(t_block *block);
 void					ft_freemem(char ***str);
+void    				ft_freememint(int ***str);
 
 #endif

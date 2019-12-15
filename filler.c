@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   filler.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:34:56 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 04:27:45 by ohachim          ###   ########.fr       */
+/*   Updated: 2019/12/15 04:58:36 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ int				main(void)
 		player_step(&block);
 		ft_printf("yo \n");
 		ft_freemem(&block.map);
-	//	ft_freemem(&block.priority);
-	//	free(block.priority);
+		ft_freememint(&block.priority);
+		free(block.priority);
 		ft_freemem(&block.token);
 		free(block.token);
 		free(block.map);
