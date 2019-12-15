@@ -6,20 +6,20 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 02:58:08 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 04:11:55 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/15 04:29:21 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void    ft_freemem(char **str)
+void    ft_freemem(char ***str)
 {
 	int i;
 
 	i = 0;
-	while(str[i])
+	while(str[0][i])
 	{
-		ft_strdel(&str[i]);
+		ft_strdel(&str[0][i]);
 		i++;
 	}
 }

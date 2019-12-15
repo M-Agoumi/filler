@@ -6,7 +6,7 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:34:56 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 04:13:31 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/15 04:27:45 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,17 @@ int				main(void)
 		read_token_size(&block);
 		update_priority(&block);
 		player_step(&block);
+		ft_printf("yo \n");
+		ft_freemem(&block.map);
+	//	ft_freemem(&block.priority);
+	//	free(block.priority);
+		ft_freemem(&block.token);
 		free(block.token);
-		ft_freemem(block.map);
+		free(block.map);
 		block.map = NULL;
+		block.token = NULL;
+		block.priority = NULL;
+		ft_printf("yo \n");
 	}
 	return (0);
 }
