@@ -6,7 +6,7 @@
 #    By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/27 18:36:21 by magoumi           #+#    #+#              #
-#    Updated: 2019/12/10 08:38:04 by magoumi          ###   ########.fr        #
+#    Updated: 2019/12/15 03:19:56 by magoumi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,15 @@ SRC = filler.c \
 		create_priority.c \
 		read_map.c \
 		read_token.c \
-		player_step.c
+		player_step.c \
+		ft_free.c
 
 OBJECT = filler.o \
 		create_priority.o \
 		read_map.o \
 		read_token.o \
-		player_step.o
+		player_step.o \
+		ft_free.o
 
 all: $(NAME)
 
