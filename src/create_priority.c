@@ -6,7 +6,7 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 08:08:51 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/10 08:39:04 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/16 03:32:46 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void			create_priority(t_block *block, int max_y, int max_x)
 			perror("allocation error");
 		j++;
 	}
+	block->priority[j] = NULL;
 }

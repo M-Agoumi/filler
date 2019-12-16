@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   read_token.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:36:41 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/14 05:31:16 by ohachim          ###   ########.fr       */
+/*   Updated: 2019/12/16 03:34:04 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static void create_token(char ***token, int ty)
+static void	create_token(char ***token, int ty)
 {
 	char				*line;
 	int					j;
@@ -28,15 +28,16 @@ static void create_token(char ***token, int ty)
 		j++;
 		ft_strdel(&line);
 	}
+	(*token)[j] = NULL;
 }
 
-void        read_token_size(t_block *block)
+void		read_token_size(t_block *block)
 {
 	int					i;
 	char				*line;
 
 	i = 0;
-	if(get_next_line(STDIN, &line) != -1)
+	if (get_next_line(STDIN, &line) != -1)
 	{
 		while (!ft_isdigit(line[i]))
 			i++;

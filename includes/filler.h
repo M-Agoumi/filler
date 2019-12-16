@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   filler.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <ohachim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 07:36:58 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/15 05:09:04 by ohachim          ###   ########.fr       */
+/*   Updated: 2019/12/16 00:25:30 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
-# include "../libft/libft.h"
+# include "../libft/include/libft.h"
 # define STDIN	0
 # define STDOUT	1
 

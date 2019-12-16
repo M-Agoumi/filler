@@ -6,51 +6,60 @@
 #    By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/27 18:36:21 by magoumi           #+#    #+#              #
-#    Updated: 2019/12/15 03:19:56 by magoumi          ###   ########.fr        #
+#    Updated: 2019/12/16 00:26:47 by magoumi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRC_PATH = src
+
+SRC_NAME = 	filler.c \
+			create_priority.c \
+			read_map.c \
+			read_token.c \
+			player_step.c \
+			ft_free.c
+
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+
+OBJ_PATH = obj
+
+OBJ_NAME = $(SRC_NAME:.c=.o)
+
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+
+CPPFLAGS =-Iincludes -Ilibft/include
+
+LDFLAGS = -Llibft
+
+LDLIBS = -lft
+
 NAME = magoumi.filler
 
-HDIR = $(SRC)
+CC = gcc
 
-FLAGS = -Werror -Wall -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
-GG = gcc
+DEPS = includes/filler.h
 
-INCL = libft/libft.a
-
-HINCL = -Iincludes
-
-FSRC = src
-
-SRC = filler.c \
-		create_priority.c \
-		read_map.c \
-		read_token.c \
-		player_step.c \
-		ft_free.c
-
-OBJECT = filler.o \
-		create_priority.o \
-		read_map.o \
-		read_token.o \
-		player_step.o \
-		ft_free.o
+.PHONY: all, clean, fclean, re
 
 all: $(NAME)
 
-$(NAME):
-	make -C libft/
-	$(GG) $(HINCL) $(FLAGS) -c $(SRC)
-	$(GG) $(HINCL) -o $(NAME) $(OBJECT) $(INCL)
+$(NAME): $(OBJ)
+		@cd libft ; make
+		$(CC) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
-clean :
-	make clean -C libft/
-	rm -f *.o
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(DEPS)
+	   @mkdir $(OBJ_PATH) 2> /dev/null || true
+	   $(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
-fclean : clean
-	rm -rf $(NAME)
-	make fclean -C libft/
+clean:
+	@make -C libft clean
+	@rm -vf $(OBJ)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
 
-re : fclean all
+fclean: clean
+	@make -C libft fclean
+	@rm -vf $(NAME)
+
+re: fclean all

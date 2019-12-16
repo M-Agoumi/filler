@@ -6,7 +6,7 @@
 /*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 08:37:39 by magoumi           #+#    #+#             */
-/*   Updated: 2019/12/11 03:28:55 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/12/16 03:33:50 by magoumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,27 @@ static void		check_priority(t_block *block, int y, int x)
 	(res < block->priority_dot) ? update_step(block, res, y, x) : 0;
 }
 
+void			first_possible(t_block *block)
+{
+	int i;
+	int j;
+
+	j = -1;
+	while (++j + (block->ty - 1) < block->max_y)
+	{
+		i = -1;
+		while (++i + (block->tx - 1) < block->max_x)
+		{
+			if (insert_token(block, j, i))
+			{
+				block->step_y = j;
+				block->step_x = i;
+				return ;
+			}
+		}
+	}
+}
+
 void			player_step(t_block *block)
 {
 	int			j;
@@ -80,6 +101,7 @@ void			player_step(t_block *block)
 				check_priority(block, j, i);
 		}
 	}
-	dprintf(2, "%d %d\n", block->step_y, block->step_x);
+	if (!block->step_y && !block->step_x)
+		first_possible(block);
 	ft_printf("%d %d\n", block->step_y, block->step_x);
 }
